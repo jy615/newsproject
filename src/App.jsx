@@ -10,6 +10,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import Map from "./components/Map/Map";
 
 
+
 function App() {
  
   
@@ -26,6 +27,7 @@ function App() {
             <Route path="/:x" element={post} />
            
         </Routes>
+      
       <Cards />
       {/* <Map /> */}
       
