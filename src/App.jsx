@@ -15,7 +15,9 @@ function App() {
  
   
   const post = () => {
+
     const x = useParams()
+   
   }
 
   return (
