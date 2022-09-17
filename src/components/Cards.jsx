@@ -89,6 +89,7 @@ console.log("url:", url)
         news.map((value) => {
           return (
             <div className="card" onClick={()=> window.open(value.url, "_blank")} 
+
             style={{width: "19rem"}}>
             <img src={value.urlToImage} className="card-img-top" alt="..." />
             <div className="card-body">
@@ -96,6 +97,7 @@ console.log("url:", url)
               <p className="card-text">{value.description}</p>
               <div className="card-footer">
                 <small className="text-muted">{value.publishedAt}</small>
+                <button>Add To Fav</button>
               </div>
             </div>
           </div>
