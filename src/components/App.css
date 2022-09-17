@@ -1,0 +1,10 @@
+body {
+    --whole-color: #F5FCFF;
+    --box-color: #92dff3;
+}
+
+.app {
+    display: flex;
+    height: 100vh
+}
+
