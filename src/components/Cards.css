@@ -1,10 +1,9 @@
 .sidebar {
-    position: sticky;
-    border-right: 1px solid lightgrey;
-    flex: 0.1;
-    top: 0;
-    margin-top: 20px;
-    min-width: 150px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 2rem;
+    padding: 0 1rem;
 }
 
 .card {

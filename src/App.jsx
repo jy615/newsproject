@@ -7,12 +7,12 @@ import SidebarOptions from "./components/SidebarOptions";
 import { BrowserRouter, Link, Route, Routes, useParams } from "react-router-dom";
 import "./components/App.css"
 import 'bootstrap/dist/css/bootstrap.min.css'
-import Map from "./components/Map/Map";
+
 
 
 
 function App() {
- 
+  
   
   const post = () => {
 
@@ -23,15 +23,18 @@ function App() {
   return (
     <>
     <BrowserRouter>
-
+    <h1>News</h1>
       <div className="app">
       <Routes>
-            <Route path="/:x" element={post} />
+            <Route path="/:x" element={post} />   
            
+            
         </Routes>
+       
       
-      <Cards />
-      {/* <Map /> */}
+        <Cards  />
+    
+     
       
      
       </div>
