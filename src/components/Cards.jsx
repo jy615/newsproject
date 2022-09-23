@@ -22,6 +22,7 @@ export default function Cards(props) {
     const [news, setNews] = useState([])
     const [favourite, setFavourite] = useState([])
     const [viewfav, setViewfav] = useState(false)
+    const [removefav, setRemovefav] = useState(false)
     const {pathname} = useLocation()
 //  console.log(pathname)
   //   const [searchvalue, setSearchValue] = useState('')
@@ -66,6 +67,10 @@ const handleFavs = () => {
   setViewfav(true)
 }
 
+const removeFavs = () => {
+  setRemovefav(true)
+}
+
     return (
       <>
       
@@ -99,7 +104,8 @@ const handleFavs = () => {
     <Link to={`/favs`} style={{textDecoration: 'none'}} >
     <SidebarOptions handleFavs={handleFavs} text="My Favourite" Icon={<FavoriteTwoToneIcon />}/>
     </Link>
-    
+   
+
        
        </div>
 <div className="row"> 
@@ -109,9 +115,9 @@ const handleFavs = () => {
        viewfav || 
        news.map((value) => {
           return (
-            <div className="card" style={{width: "19rem"}}>
+            <div className="card" style={{width: "18rem"}}>
               {/* <a href="/favs" class="btn btn-primary" onClick={()=> handleAddToFavs(value)}>Add To Favourite</a> */}
-              <button onClick={()=> handleAddToFavs(value)}>Add To Favourite</button>
+              <button class="btn btn-outline-dark" onClick={()=> handleAddToFavs(value)}>Add To Favourite</button>
             <img src={value.urlToImage} className="card-img-top" alt="..." />
             <div className="card-body" onClick={()=> window.open(value.url, "_blank")}>
               <h5 className="card-tile">{value.title}</h5>
@@ -130,7 +136,7 @@ const handleFavs = () => {
         favourite.map((value) => {
           return (
             <div className="card" style={{width: "19rem"}}>
-              <a href="/favs" class="btn btn-primary" onClick={()=> handleAddToFavs(value)}>Add To Favourite</a>
+              {/* <button onClick={()=> removeFavs(value)}>Remove From Favourite </button> */}
             <img src={value.urlToImage} className="card-img-top" alt="..." />
             <div className="card-body" onClick={()=> window.open(value.url, "_blank")}>
               <h5 className="card-tile">{value.title}</h5>
@@ -143,6 +149,17 @@ const handleFavs = () => {
                   )          
         } 
         )
+      }
+      {
+        removefav && 
+        favourite.filter((value) => {
+          return (
+            value.url !== url
+                  )          
+        } 
+        
+        )
+       
       }
         </div> 
       </>
