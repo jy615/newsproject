@@ -2,9 +2,13 @@ body {
     --whole-color: #F5FCFF;
     --box-color: #92dff3;
 }
-
-.app {
+ .app {
     display: flex;
-    height: 100vh
-}
+    height: 100vh;
+    justify-content: space-between;
+} 
 
+.header {
+    display: flex;
+    justify-content: center; 
+}
